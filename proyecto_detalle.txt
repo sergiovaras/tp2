@@ -1,0 +1,55 @@
+================================================================================
+DETALLE DEL PROYECTO: OFERTASAPP - DESPLIEGUE PÚBLICO Y MONETIZACIÓN
+================================================================================
+
+1. DESCRIPCIÓN GENERAL
+----------------------
+OfertasApp es una plataforma integral diseñada para capturar y presentar las mejores 
+ofertas de Mercado Libre en tiempo real. Combina un potente motor de Web Scraping 
+en el backend con una interfaz de usuario moderna basada en Glassmorphism.
+
+2. ARQUITECTURA DEL SISTEMA
+---------------------------
+- Backend: ASP.NET Core 8 Web API.
+- Motor de Datos: HtmlAgilityPack para extracción dinámica (Scraping).
+- Base de Datos: Entity Framework Core con SQL Server (Migrable a PostgreSQL).
+- Frontend: React JS con Vite.
+- Estilos: CSS3 Moderno con variables y animaciones avanzadas.
+
+3. SEGURIDAD Y CONFIGURACIÓN PÚBLICA
+-------------------------------------
+Para llevar la API a un entorno público, se han implementado:
+- CORS Dinámico: Configurado en `Program.cs` para aceptar múltiples orígenes, 
+  permitiendo la comunicación solo desde dominios autorizados (Producción y Local).
+- Variables de Entorno: Las cadenas de conexión y URLs sensibles se manejan 
+  mediante `appsettings.json` y variables de sistema.
+- Redirección HTTPS: Forzada para asegurar que todos los datos viajen cifrados.
+- Swagger Security: Soporte para Bearer Tokens en endpoints privados.
+
+4. ESTRATEGIA DE PUBLICACIÓN (HOSTING GRATUITO)
+-----------------------------------------------
+Para que el servidor sea gratis y público, se recomienda:
+- BACKEND API: Render.com o Railway.app (Planes gratuitos para Docker/C#).
+- FRONTEND: Vercel o Netlify (Optimización automática de assets).
+- BASE DE DATOS: Azure SQL (Free Tier) o Supabase (PostgreSQL gratuito).
+
+5. MODELO DE MONETIZACIÓN (GANANCIAS)
+-------------------------------------
+Se ha integrado un sistema de "Publicaciones Premium" en el frontend:
+- Componente `Publicidad.jsx`: Diseñado para integrarse estéticamente sin romper 
+  la experiencia de usuario.
+- Espacios Estratégicos: Banners principales bajo la sección de ofertas y 
+  Sidebars informativos.
+- Preparado para AdSense: El código permite el reemplazo fácil de placeholders 
+  por scripts reales de Google AdSense o patrocinadores directos.
+
+6. PASOS PARA COMPLETAR EL DESPLIEGUE
+-------------------------------------
+1. Subir el código a un repositorio GitHub.
+2. Conectar el repositorio con Render (para el Backend).
+3. Conectar el mismo repositorio con Vercel (para el Frontend).
+4. Configurar la variable `AllowedOrigins` en Render con la URL de Vercel.
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================

@@ -1,0 +1,101 @@
+.publicidad-container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publicidad-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--secondary);
+}
+
+.ad-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--secondary);
+  color: #000;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-bottom-left-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner-ad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.banner-ad h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.banner-ad p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.btn-ad {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(45deg, var(--secondary), #ffd700);
+  border: none;
+  border-radius: 30px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-ad:hover {
+  opacity: 0.9;
+}
+
+.ad-footer {
+  text-align: center;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+/* Sidebar variant */
+.publicidad-container.sidebar {
+  padding: 1rem;
+}
+
+.ad-image-placeholder {
+  height: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.btn-ad-sm {
+  width: 100%;
+  padding: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
