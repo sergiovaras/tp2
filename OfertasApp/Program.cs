@@ -8,9 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Configuración de CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAReactApp",
+    options.AddPolicy("AllowFrontend",
        policy => policy
-            .WithOrigins(builder.Configuration["AllowedOrigins"]?.Split(',') ?? new[] { "http://localhost:5173" })
+            .WithOrigins("https://tp2-nu.vercel.app")
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
@@ -53,7 +53,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAReactApp");
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
