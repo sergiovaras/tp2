@@ -10,7 +10,7 @@ function Ofertas({ onDataFetched }) {
 
   const fetchOfertas = (query = "") => {
     setLoading(true);
-    axios.get(`http://localhost:5043/api/Ofertas/mercadolibre${query ? `?query=${query}` : ""}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/Ofertas/mercadolibre${query ? `?query=${query}` : ""}`)
       .then(res => {
         setOfertas(res.data.data);
         if (onDataFetched) onDataFetched(res.data);
