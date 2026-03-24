@@ -10,7 +10,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
        policy => policy
-            .WithOrigins("https://tp2-nu.vercel.app")
+            .WithOrigins("https://tp2-nu.vercel.app/")
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
